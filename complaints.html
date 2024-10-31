@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quejas y Sugerencias</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Sistema de Quejas y Sugerencias</h2>
+        <p class="text-center">Tu opinión es importante para nosotros. Por favor, selecciona el tipo de mensaje y
+            escribe tu comentario a continuación.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="php/save_comment.php" method="POST">
+                    <!-- Selección del tipo de mensaje -->
+                    <div class="form-group">
+                        <label for="tipo">Tipo de mensaje:</label>
+                        <select class="form-control" id="tipo" name="tipo" required>
+                            <option value="queja">Queja</option>
+                            <option value="sugerencia">Sugerencia</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo de mensaje -->
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                            placeholder="Escribe aquí tu comentario..." required></textarea>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
