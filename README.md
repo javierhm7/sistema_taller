@@ -1,6 +1,2 @@
-Colocar una queja o sugerencia
-http://localhost/quejas_sugerenciasV2/complaints.html
-
-
-Visualizar la bd
-http://localhost/quejas_sugerenciasV2//view_comments.php
+Se ha cambiado el orden y hoy si se puede acceder desde el index.html
+Usuario: admin Contraseña: admin123 
