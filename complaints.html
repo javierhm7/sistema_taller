@@ -11,31 +11,42 @@
 <body>
     <div class="container mt-5">
         <h2 class="mb-4 text-center">Sistema de Quejas y Sugerencias</h2>
-        <p class="text-center">Tu opinión es importante para nosotros. Por favor, selecciona el tipo de mensaje y
-            escribe tu comentario a continuación.</p>
+        <p class="text-center">Tu opinión es importante para nosotros. Por favor, selecciona el tipo de mensaje y escribe tu comentario a continuación.</p>
 
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form action="php/save_comment.php" method="POST">
+                    <!-- Campo de nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre (opcional)">
+                    </div>
+
+                    <!-- Campo de correo -->
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Escribe tu correo (opcional)">
+                    </div>
+
                     <!-- Selección del tipo de mensaje -->
                     <div class="form-group">
                         <label for="tipo">Tipo de mensaje:</label>
                         <select class="form-control" id="tipo" name="tipo" required>
-                            <option value="queja">Queja</option>
-                            <option value="sugerencia">Sugerencia</option>
+                            <option value="Queja">Queja</option>
+                            <option value="Sugerencia">Sugerencia</option>
                         </select>
                     </div>
 
                     <!-- Campo de mensaje -->
                     <div class="form-group">
                         <label for="mensaje">Mensaje:</label>
-                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
-                            placeholder="Escribe aquí tu comentario..." required></textarea>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu comentario..." required></textarea>
                     </div>
 
-                    <!-- Botón de envío -->
-                    <div class="text-center">
+                    <!-- Botones de envío y regreso al menú principal -->
+                    <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Enviar</button>
+                        <a href="main.html" class="btn btn-secondary">Volver al Menú Principal</a>
                     </div>
                 </form>
             </div>

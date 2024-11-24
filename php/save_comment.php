@@ -1,24 +1,37 @@
 <?php
-session_start();
 include 'database.php';
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../index.html");
+// Capturar los datos del formulario
+$nombre = isset($_POST['nombre']) && !empty(trim($_POST['nombre'])) ? trim($_POST['nombre']) : 'Anónimo';
+$correo = isset($_POST['correo']) ? trim($_POST['correo']) : null;
+$mensaje = isset($_POST['mensaje']) ? trim($_POST['mensaje']) : null;
+$tipo = isset($_POST['tipo']) ? trim($_POST['tipo']) : null;
+
+// Validar que los campos obligatorios no estén vacíos
+if (empty($mensaje) || empty($tipo)) {
+    header("Location: ../error.html"); // Redirigir a una página de error si faltan datos
     exit();
 }
 
-$usuario_id = $_SESSION['usuario_id'];
-$mensaje = $_POST['mensaje'];
-$tipo = $_POST['tipo']; // Obtener el tipo de mensaje
+try {
+    // Insertar los datos en la tabla quejas_sugerencias
+    $query = $pdo->prepare("
+        INSERT INTO quejas_sugerencias (nombre, correo, mensaje, tipo) 
+        VALUES (:nombre, :correo, :mensaje, :tipo)
+    ");
+    $query->bindParam(":nombre", $nombre);
+    $query->bindParam(":correo", $correo);
+    $query->bindParam(":mensaje", $mensaje);
+    $query->bindParam(":tipo", $tipo);
+    $query->execute();
 
-// Insertar el mensaje en la base de datos
-$query = $pdo->prepare("INSERT INTO quejas_sugerencias (usuario_id, mensaje, tipo) VALUES (:usuario_id, :mensaje, :tipo)");
-$query->bindParam(":usuario_id", $usuario_id);
-$query->bindParam(":mensaje", $mensaje);
-$query->bindParam(":tipo", $tipo);
-$query->execute();
-
-header("Location: ../complaints.html");
-exit();
+    // Redirigir al usuario a una página de confirmación
+    header("Location: ../complaints.html");
+    exit();
+} catch (PDOException $e) {
+    // Manejar errores de la base de datos
+    error_log("Error en la inserción de datos: " . $e->getMessage());
+    header("Location: ../error.html");
+    exit();
+}
 ?>

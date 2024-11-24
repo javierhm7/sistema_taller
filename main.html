@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Mantenimiento de Autos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 1px;
+            text-align: center;
+        }
+        nav {
+            background: #0056b3;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('img/mecanico-arreglando-auto.jpg') no-repeat center center/cover;
+            width: 100%;
+            aspect-ratio: 89/40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        .services, .gallery, .testimonials, .sugerencia {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .services h2, .gallery h2, .testimonials h2, .sugerencia h2 {
+            margin-bottom: 20px;
+        }
+        .services .service-item, .gallery img, .testimonials .testimonial-item {
+            display: inline-block;
+            margin: 15px;
+            width: calc(33% - 30px);
+            font-size: large;
+        }
+        .gallery img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .sugerencia form {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .sugerencia label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .sugerencia input, .sugerencia textarea, .sugerencia button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .sugerencia button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px; 
+        font-size: 14px; 
+        cursor: pointer;
+        border-radius: 5px; 
+        width: auto;
+        }
+        .sugerencia button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Servicio de Mantenimiento de Autos</h1>
+        <p>Tu Auto en las Mejores Manos</p>
+    </header>
+    <nav>
+        <a href="#services">Servicios</a>
+        <a href="#gallery">Galería</a>
+        <a href="#testimonials">Testimonios</a>
+        <a href="#sugerencia">Sugerencias</a>
+    </nav>
+    <div class="hero">
+        <h1>Mantenimiento Confiable y Rápido</h1>
+    </div>
+    <section id="services" class="services">
+        <h2>Servicios Destacados</h2>
+        <div class="service-item">Cambio de Aceite</div>
+        <div class="service-item">Revisión Completa</div>
+        <div class="service-item">Limpieza y Pulido</div>
+    </section>
+    <section id="gallery" class="gallery">
+        <h2>Galería</h2>
+        <img src="img/cambio-aceite-scaled.jpg" alt="Foto de taller 1" style="aspect-ratio: 256/167;">
+        <img src="img/revision.png" alt="Foto de taller 2">
+        <img src="img/pulido.jpeg" alt="Foto de taller 3">
+    </section>
+    <section id="testimonials" class="testimonials">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <div class="testimonial-item">"El mejor servicio que he recibido para mi auto"</div>
+        <div class="testimonial-item">"Profesionales y muy rápidos"</div>
+        <div class="testimonial-item">"100% recomendado"</div>
+    </section>
+    <section id="sugerencia" class="sugerencia">
+        <h2>Sugerencias</h2>
+        <p>Nos encantaría escuchar tus ideas y comentarios para mejorar nuestro servicio.</p>
+        <button onclick="window.location.href='complaints.html'">Enviar sugerencia</button>
+        </section>
+        <footer>
+        <p>&copy; 2024 Servicio de Mantenimiento de Autos</p>
+        <p>Teléfono: +503 7999-2153 | Correo: drcars.service@gmail.com</p>
+        <p>Ubicación: 21 calle pte. y 29 av. norte #1220. Media cuadra al norte de Aseguradora Futuro, San Salvador, El Salvador</p>
+    </footer>
+</body>
+</html>

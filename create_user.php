@@ -17,7 +17,7 @@ try {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Inserta el nuevo usuario en la base de datos
-    $query = $pdo->prepare("INSERT INTO usuarios (username, password) VALUES (:username, :password)");
+    $query = $pdo->prepare("INSERT INTO admin (username, password) VALUES (:username, :password)");
     $query->bindParam(":username", $username);
     $query->bindParam(":password", $hashedPassword);
     $query->execute();
